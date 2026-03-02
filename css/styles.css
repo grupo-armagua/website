@@ -238,12 +238,25 @@ textarea{ min-height:110px; resize:vertical; }
   }
 
   /* mostrar botón */
-  .menu-toggle{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    margin-left:auto;
-  }
+.menu-toggle{
+  display:none;
+  background:#fff;
+  color:var(--red);
+  border:0;
+  border-radius:14px;
+  padding:14px 18px;      /* más grande */
+  font-size:24px;         /* tamaño del icono ☰ */
+  font-weight:900;
+  cursor:pointer;
+  line-height:1;
+  box-shadow:0 6px 18px rgba(0,0,0,.25);
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+
+.menu-toggle:hover{
+  transform:scale(1.05);
+  box-shadow:0 8px 22px rgba(0,0,0,.35);
+}
 
   /* opcional: ocultar teléfono en móvil (ya lo tenías) */
   .cta-phone{ display:none; }
