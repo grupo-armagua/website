@@ -76,16 +76,24 @@ productBulletImages.forEach((img) => {
   });
 });
 
-  document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () {
+
   const btn = document.querySelector('.menu-toggle');
   const menu = document.querySelector('.menu');
 
-  if (btn && menu) {
-    btn.addEventListener('click', function () {
+  if(btn && menu){
+
+    btn.addEventListener('click', function(){
+
       const isOpen = menu.classList.toggle('is-open');
+      btn.classList.toggle('is-active');
+
       btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
     });
+
   }
+
 });
 
 })();
