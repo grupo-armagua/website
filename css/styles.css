@@ -237,28 +237,86 @@ textarea{ min-height:110px; resize:vertical; }
     background:rgba(255,255,255,.20);
   }
 
-  /* mostrar botón */
+/* =========================
+   MENU HAMBURGUESA PREMIUM
+========================= */
+
+/* Botón */
 .menu-toggle{
   display:none;
+  width:56px;
+  height:56px;
+  border-radius:50%;
   background:#fff;
-  color:var(--red);
   border:0;
-  border-radius:14px;
-  padding:14px 18px;      /* más grande */
-  font-size:24px;         /* tamaño del icono ☰ */
-  font-weight:900;
   cursor:pointer;
-  line-height:1;
-  box-shadow:0 6px 18px rgba(0,0,0,.25);
-  transition:transform .15s ease, box-shadow .15s ease;
+  position:relative;
+  box-shadow:0 8px 22px rgba(0,0,0,.25);
+  transition:all .3s ease;
 }
 
-.menu-toggle:hover{
-  transform:scale(1.05);
-  box-shadow:0 8px 22px rgba(0,0,0,.35);
+/* Líneas del ícono */
+.menu-toggle span{
+  position:absolute;
+  left:50%;
+  width:24px;
+  height:3px;
+  background:var(--red);
+  border-radius:2px;
+  transform:translateX(-50%);
+  transition:all .3s ease;
 }
 
-  /* opcional: ocultar teléfono en móvil (ya lo tenías) */
-  .cta-phone{ display:none; }
+.menu-toggle span:nth-child(1){ top:20px; }
+.menu-toggle span:nth-child(2){ top:26px; }
+.menu-toggle span:nth-child(3){ top:32px; }
+
+/* Animación cuando está abierto */
+.menu-toggle.is-active span:nth-child(1){
+  transform:translateX(-50%) rotate(45deg);
+  top:26px;
+}
+
+.menu-toggle.is-active span:nth-child(2){
+  opacity:0;
+}
+
+.menu-toggle.is-active span:nth-child(3){
+  transform:translateX(-50%) rotate(-45deg);
+  top:26px;
+}
+
+/* Mobile */
+@media (max-width:980px){
+
+  .nav{
+    flex-wrap:wrap;
+  }
+
+  .menu{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    align-items:center;
+    gap:14px;
+    padding:18px 0;
+    background:var(--red);
+    border-top:1px solid rgba(255,255,255,.2);
+  }
+
+  .menu.is-open{
+    display:flex;
+  }
+
+  .menu-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-left:auto;
+  }
+
+  .cta-phone{
+    display:none;
+  }
 }
 
