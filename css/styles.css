@@ -192,3 +192,60 @@ textarea{ min-height:110px; resize:vertical; }
   background-color: #E4405F;
 }
 
+/* Botón hamburguesa */
+.menu-toggle{
+  display:none;
+  background:#fff;
+  color:var(--black);
+  border:0;
+  border-radius:12px;
+  padding:10px 12px;
+  font-weight:900;
+  cursor:pointer;
+  line-height:1;
+}
+
+/* Menú mobile */
+@media (max-width:980px){
+  .nav{
+    flex-wrap:wrap;
+    align-items:center;
+  }
+
+  /* oculto por defecto, se abre con la clase */
+  .menu{
+    display:none;
+    width:100%;
+    justify-content:center;
+    gap:10px 12px;
+    padding:8px 0 0;
+  }
+
+  .menu.is-open{
+    display:flex;
+    flex-wrap:wrap;
+  }
+
+  .menu__link{
+    padding:8px 10px;
+    border-radius:999px;
+    background:rgba(255,255,255,.12);
+  }
+
+  .menu__link:hover{
+    text-decoration:none;
+    background:rgba(255,255,255,.20);
+  }
+
+  /* mostrar botón */
+  .menu-toggle{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    margin-left:auto;
+  }
+
+  /* opcional: ocultar teléfono en móvil (ya lo tenías) */
+  .cta-phone{ display:none; }
+}
+
